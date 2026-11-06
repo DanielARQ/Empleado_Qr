@@ -1,0 +1,72 @@
+/* ================== GENERAL ================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Lato', sans-serif; background: #f0f2f7; color: #495057; }
+
+/* ================== BARRA SUPERIOR ================== */
+.topbar { background: #fff; height: 80px; display: flex; align-items: center; padding: 0 30px;
+          box-shadow: 0 2px 4px rgba(0,0,0,.05); }
+.logo { display: flex; align-items: center; gap: 12px; font-size: 24px; color: #343a40; line-height: 1.2; }
+.menu-btn { margin-left: 60px; font-size: 22px; color: #6c757d; cursor: pointer; background: none; border: none; }
+
+.layout { display: flex; gap: 28px; padding: 30px 24px; align-items: flex-start; }
+.contenido { flex: 1; min-width: 0; }
+
+/* ================== MENÚ LATERAL ================== */
+.sidebar { background: #fff; border-radius: 12px; width: 320px; padding: 24px; flex-shrink: 0;
+           max-height: 730px; overflow-y: auto; }
+.sidebar h4 { font-size: 13px; font-weight: 700; color: #343a40; margin: 14px 0 10px; }
+.sidebar .item { display: flex; align-items: center; gap: 12px; padding: 12px 18px; color: #495057;
+                 text-decoration: none; font-size: 16px; border-radius: 6px; }
+.sidebar .item:hover { background: #f4f5f8; }
+.sidebar .item.active { color: #4f46e5; font-weight: 700; }
+
+/* ================== PANELES ================== */
+.vista { display: flex; gap: 28px; align-items: flex-start; flex-wrap: wrap; }
+.panel { border-radius: 12px !important; box-shadow: none !important; }
+.panel .p-card-body { padding: 32px 36px; }
+.panel .p-card-title { font-size: 21px; font-weight: 400; color: #343a40; margin-bottom: 14px; }
+
+/* ================== FORMULARIO ================== */
+.form-panel { flex: 1; min-width: 340px; max-width: 600px; }
+.form-panel label { display: block; font-size: 15px; margin-bottom: 8px; }
+.form-panel .p-inputtext,
+.form-panel .p-select,
+.form-panel .p-datepicker { margin-bottom: 20px; }
+.form-panel .p-inputtext { font-size: 17px; padding: 12px 16px; }
+.btn-generar { width: 310px; max-width: 100%; padding: 14px 0 !important; font-weight: 700 !important;
+               font-size: 17px !important; margin-top: 10px; background: #5cbf6a !important;
+               border-color: #5cbf6a !important; color: #fff !important; }
+.btn-generar:hover { background: #4caf59 !important; border-color: #4caf59 !important; }
+.mb { margin-bottom: 18px; }
+
+/* ================== TARJETA DIGITAL ================== */
+.card-panel { width: 430px; flex-shrink: 0; }
+.id-card { width: 365px; height: 605px; margin: 0 auto; border-radius: 12px; overflow: hidden; position: relative;
+           background: #fff; box-shadow: 0 6px 18px rgba(0,0,0,.18); text-align: center; }
+.id-card .top { position: absolute; inset: 0 0 auto 0; height: 200px; background: #1a2e4f;
+                border-radius: 0 0 50% 50% / 0 0 35% 35%; z-index: 2; }
+.id-card .wave-top { position: absolute; top: 60px; left: -40px; right: -40px; height: 200px; background: #2a62c9;
+                     border-radius: 0 0 50% 50% / 0 0 45% 45%; z-index: 1; }
+.id-card .company { position: relative; z-index: 3; display: flex; align-items: center; justify-content: center;
+                    gap: 14px; padding-top: 26px; color: #fff; text-align: left; }
+.id-card .company b { font-size: 17px; letter-spacing: .5px; }
+.id-card .company small { display: block; font-size: 13px; opacity: .85; }
+.avatar { position: relative; z-index: 4; width: 155px; height: 155px; border-radius: 50%; background: #e9ecef;
+          margin: 40px auto 0; border: 8px solid #fff; box-shadow: 0 4px 12px rgba(0,0,0,.2); overflow: hidden; }
+.id-card .name { margin-top: 30px; font-size: 27px; font-weight: 900; color: #1a2e4f; line-height: 1.25;
+                 text-transform: uppercase; padding: 0 10px; }
+.id-card .role { font-size: 21px; color: #6c757d; margin-top: 6px; letter-spacing: 1px; }
+.id-card .rfc { font-size: 20px; color: #1a2e4f; margin-top: 20px; letter-spacing: .5px; }
+.id-card .barcode { margin-top: 12px; }
+.id-card .bottom { position: absolute; bottom: 0; left: -40px; right: -40px; height: 90px; background: #2a62c9;
+                   border-radius: 50% 50% 0 0 / 60% 60% 0 0; }
+.id-card .bottom::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 25px; background: #1a2e4f; }
+.placeholder { color: #adb5bd; }
+
+/* ================== RESPONSIVO ================== */
+@media (max-width: 900px) {
+  .layout { flex-direction: column; padding: 16px; }
+  .sidebar { width: 100%; max-height: none; }
+  .form-panel, .card-panel { min-width: 0; width: 100%; max-width: none; }
+  .id-card { transform: scale(.9); transform-origin: top center; }
+}
